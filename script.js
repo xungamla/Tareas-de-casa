@@ -13,9 +13,10 @@ const predefinedTasks = [
     { text: "Cambiar las sábanas y poner lavadora con sábanas usadas", emoji: "🛏️", note: "Las sábanas limpias pueden estar en el cuarto de la plancha o debajo de la cama" },
     { text: "Lavar albornoces, toallas y toallas", emoji: "🧺", note: "Reponer toallas con las que hay debajo de la cama" },
     { text: "Poner lavadora con ropa de nosotros", emoji: "👕", note: "Usar programa de 60 minutos y detergente en tiras" },
-    { text: "Poner lavadora con ropa de Lorenzo", emoji: "👶", note: "Usar programa delicado y detergente de Norit" },
+    { text: "Poner lavadora con ropa de Lorenzo", emoji: "👶", note: "Usar programa delicado 🧤 y detergente de Norit" },
     { text: "Regar las plantas", emoji: "🌱" },
-    { text: "Poner lavadora con trapos y bayetas", emoji: "🧺", note: "Usar programa de 15 minutos" }
+    { text: "Poner lavadora con trapos y bayetas", emoji: "🧺", note: "Usar programa de 15 minutos" },
+    { text: "Sacar basura y cambiar las bolsas", emoji: "🗑️", note: "Recordar basura del cambiador de Lorenzo" }
 ];
 
 // Array para almacenar las tareas seleccionadas
