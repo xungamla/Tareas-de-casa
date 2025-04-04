@@ -1,141 +1,146 @@
+/* Estilos generales */
 body {
-    background-color: #f8f9fa;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.card {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 15px;
-    border-radius: 10px;
-}
-
-.card-header {
-    background-color: #f1f8ff;
-    border-bottom: 1px solid #e3e3e3;
-    padding: 12px 15px;
-}
-
-.card-header h5 {
+    font-family: Arial, sans-serif;
     margin: 0;
-    font-size: 1.1rem;
+    padding: 20px;
+    background-color: #f5f5f5;
 }
 
-.card-body {
-    padding: 15px;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilos para la lista de tareas */
 .task-item {
-    padding: 12px 15px;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
     border: 1px solid #dee2e6;
-    margin-bottom: 8px;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.2s;
-    font-size: 1rem;
-    line-height: 1.4;
-    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
 }
 
-.task-item:hover, .task-item:active {
+.task-item:hover {
     background-color: #e9ecef;
 }
 
 .task-item.selected {
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+    background-color: #e3f2fd;
+    border-color: #90caf9;
 }
 
-#generatedMessage {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
-    white-space: pre-wrap;
-    font-size: 1rem;
-    padding: 12px;
-    border-radius: 8px;
-}
-
-.btn {
-    transition: all 0.2s;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border-radius: 8px;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.btn:hover, .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#selectedTasks {
-    min-height: 150px;
-    max-height: 300px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.task-item .remove-btn {
-    float: right;
+/* Estilos para el botón de eliminar */
+.remove-btn {
+    margin-left: auto;
     color: #dc3545;
+    font-weight: bold;
     cursor: pointer;
-    padding: 0 8px;
-    font-size: 1.2rem;
-    line-height: 1;
-    -webkit-tap-highlight-color: transparent;
+    padding: 0 5px;
 }
 
-.task-item .remove-btn:hover, .task-item .remove-btn:active {
+.remove-btn:hover {
     color: #c82333;
 }
 
-.input-group {
-    margin-bottom: 0;
+/* Estilos para el área de tareas seleccionadas */
+#selectedTasks {
+    margin: 20px 0;
+    min-height: 50px;
+    border: 2px dashed #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
 }
 
-.form-control {
-    padding: 10px 15px;
-    font-size: 1rem;
-    border-radius: 8px;
+/* Estilos para elementos arrastrables */
+.task-item.selected {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: move;
 }
 
-/* Mejoras para dispositivos móviles */
-@media (max-width: 768px) {
-    .container-fluid {
+.drag-handle {
+    color: #6c757d;
+    cursor: move;
+    padding: 0 5px;
+}
+
+.task-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dragging {
+    opacity: 0.5;
+    background-color: #e9ecef;
+}
+
+/* Estilos para el formulario de nueva tarea */
+#newTaskForm {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#newTask {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el área de mensaje generado */
+#generatedMessage {
+    width: 100%;
+    min-height: 150px;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .container {
         padding: 10px;
     }
     
-    h1 {
-        font-size: 1.5rem;
-        margin-bottom: 15px !important;
+    #newTaskForm {
+        flex-direction: column;
     }
     
-    .task-item {
-        padding: 10px 12px;
-        font-size: 0.95rem;
-    }
-    
-    .btn {
-        padding: 8px 12px;
-        font-size: 0.95rem;
-    }
-    
-    #generatedMessage {
-        font-size: 0.95rem;
-        padding: 10px;
-    }
-}
-
-/* Mejoras para pantallas muy pequeñas */
-@media (max-width: 360px) {
-    .card-header h5 {
-        font-size: 1rem;
-    }
-    
-    .task-item {
-        font-size: 0.9rem;
-    }
-    
-    .btn {
-        font-size: 0.9rem;
+    button {
+        width: 100%;
     }
 } 
